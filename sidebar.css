@@ -1,0 +1,106 @@
+/* ====================== Sol Sidebar ====================== */
+.sidebar {
+  width: 250px;
+  background-color: #34495e;
+  padding: 10px;
+  border-radius: 10px;
+  transition: left 0.3s ease-in-out;
+}
+
+.left-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.left-sidebar.collapsed {
+  left: -235px;
+}
+
+.sidebar-header {
+  text-align: right;
+  margin-bottom: 20px; 
+}
+
+.personnel-title { 
+  text-align: center; 
+  margin-bottom: 5px; 
+}
+
+.personnel-title h2 {
+  margin: 0;
+  margin-right: 10px; 
+}
+
+.personnel-title button {
+  margin-right: 10px;
+  padding: 5px 5px; 
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+.personnel-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.personnel-card {
+  background-color: #f39c12;
+  border-radius: 5px;
+  padding: 5px;
+  color: #2c3e50;
+  cursor: move;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+
+.personnel-card span {
+  flex-grow: 1;
+  text-align: center;  
+  font-size: 1.2em;    
+  font-weight: bold; 
+}
+
+.personnel-card button {
+  padding: 3px 6px; 
+  font-size: 0.8rem;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.personnel-card button:first-child {
+  background-color: transparent;
+  color: white;
+}
+.personnel-card button:first-child:hover {
+  background-color: #00a0fd;
+}
+
+.personnel-card button:last-child {
+  background-color: transparent;
+  color: white;
+}
+.personnel-card button:last-child:hover {
+  background-color: #ff0505;
+}
+
+.sidebar-header button {
+  padding: 5px 5px;
+  font-size: 0.75rem;
+  margin-right: 0px; 
+  cursor: pointer;
+}

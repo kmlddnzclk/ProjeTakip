@@ -1,0 +1,69 @@
+/* ====================== Personel Kartları ====================== */
+.personnel-board {
+    margin-top: 1px;
+  }
+  
+  .personnel-board h2 {
+    text-align: left;
+    color: #9b59b6;
+  }
+  
+  .personnel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .personnel-card {
+    background-color: #f39c12;
+    border-radius: 5px;
+    padding: 1px;
+    color: #2c3e50;
+    cursor: move;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .kanban-card .personnel-card { 
+    width: 5%;
+    margin-bottom: 1px;
+  }
+  
+  .personnel-card span {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold; 
+  }
+  
+  .personnel-card button {
+    padding: 3px 6px; 
+    font-size: 0.8rem;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+  }
+  
+  .personnel-card button:first-child {
+    background-color: transparent;
+    color: white;
+  }
+  .personnel-card button:first-child:hover {
+    background-color: #00a0fd;
+  }
+  
+  .personnel-card button:last-child {
+    background-color: transparent;
+    color: white;
+  }
+  .personnel-card button:last-child:hover {
+    background-color: #ff0505;
+  }

@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kanban Proje Takip Sistemi</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css"> 
+  <link rel="stylesheet" href="./css/kanban-board.css">
+  <link rel="stylesheet" href="./css/sidebar.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/kanban-card.css">
+  <link rel="stylesheet" href="./css/personnel-card.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -23,17 +28,19 @@
     <main>
       <header>
         <h1>Proje Takip Sistemi</h1>
-        <div class="header-controls">
-          
       </header>
       <div class="kanban-board">
+        <button id="addColumnBtn"><i class="fas fa-plus"></i></button> 
       </div>
     </main>
-<button id="addColumnBtn"><i class="fas fa-plus"></i></button> </div>
-    <div id="modals">
-      
-    </div>
+    <div id="modals"></div>
   </div>
-  <script src="app.js"></script>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/kanban-board.js"></script>
+  <script src="./js/sidebar.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/kanban-card.js"></script>
+  <script src="./js/personnel-card.js"></script>
 </body>
 </html>

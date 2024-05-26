@@ -14,7 +14,6 @@ body {
   padding: 20px;
 }
 
-
 /* ====================== Sol Sidebar ====================== */
 .sidebar {
   width: 250px;
@@ -37,21 +36,21 @@ body {
 
 .sidebar-header {
   text-align: right;
-  margin-bottom: 20px; /* Alttaki öğelere boşluk */
+  margin-bottom: 20px;
 }
 
-.personnel-title { /* "Personeller" başlığı ve butonu için yeni bir sınıf */
-  text-align: center; /* Yatay ortalama */
-  margin-bottom: 20px; /* Alttaki öğelere boşluk */
+.personnel-title {
+  text-align: center; 
+  margin-bottom: 5px; 
 }
 
 .personnel-title h2 {
   margin: 0;
-  margin-right: 10px; /* Butona boşluk */
+  margin-right: 10px; 
 }
 
 .personnel-title button {
-   margin-right: 10px;
+  margin-right: 10px;
   padding: 5px 5px; 
   font-size: 1rem;
   background-color: transparent;
@@ -60,6 +59,60 @@ body {
   cursor: pointer;
 }
 
+.personnel-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.personnel-card {
+  background-color: #f39c12;
+  border-radius: 5px;
+  padding: 5px;
+  color: #2c3e50;
+  cursor: move;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.personnel-card span {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.personnel-card button {
+  padding: 3px 6px; 
+  font-size: 0.8rem;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.personnel-card button:first-child {
+  background-color: transparent;
+  color: white;
+}
+.personnel-card button:first-child:hover {
+  background-color: #00a0fd;
+}
+
+.personnel-card button:last-child {
+  background-color: transparent;
+  color: white;
+}
+.personnel-card button:last-child:hover {
+  background-color: #ff0505;
+}
 
 /* ====================== Header ====================== */
 header h1 {
@@ -72,32 +125,31 @@ header h1 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  justify-content: flex-end; /* Butonları sağa hizala */
-  position: absolute; /* Butonları kanban board'a göre konumlandırmak için */
-  right: 0;  /* Kanban board'un sağ kenarına yasla */
-  top: 50%; /* Dikey olarak ortala */
-  transform: translateY(-50%); /* Dikeyde ortala */
+  justify-content: flex-end;
+  position: absolute;
+  right: 0; 
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
 .header-controls > * {
-  margin-left: 5px; /* Her buton arasında 5px boşluk */
+  margin-left: 5px; 
 }
 .header-controls button {
-  /* ... diğer özellikler ... */
-  margin-right: 0; /* Butonu kanban board'a yakınlaştır */
+  margin-right: 0; 
 }
-.header-controls > *:last-child { /* Sütun ekleme butonu */
-  margin-right: 0; /* Son butonu sağa yasla */
-  border-radius: 5px 0 0 5px; /* Sol köşeleri yuvarlat */
+.header-controls > *:last-child { 
+  margin-right: 0; 
+  border-radius: 5px 0 0 5px; 
 }
 
 /* ====================== Kanban Board ====================== */
 .kanban-board {
   width: 1250px;
   display: flex;
-  /*justify-content: flex-start;*/
   gap: 5px;
-  margin-left: 50;  
+  margin-left: 50;
+  position: relative; 
 }
 
 .container .left-sidebar.collapsed ~ main .kanban-board {
@@ -129,16 +181,15 @@ header h1 {
   background-color: #2980b9; 
   color: #eb7d00;
   font-size: 1.2rem;
-  white-space: nowrap; /* Metnin tek satırda kalmasını sağla */
-  overflow: hidden;     /* Taşan metni gizle */
-  text-overflow: ellipsis; /* Taşan metne "..." ekle */
-
+  white-space: nowrap; 
+  overflow: hidden;     
+  text-overflow: ellipsis; 
 }
 
 .sidebar-header button {
   padding: 5px 5px;
   font-size: 0.75rem;
-  margin-right: 0px; /* Butonu sağa yasla */
+  margin-right: 0px; 
   cursor: pointer;
 }
 
@@ -175,11 +226,10 @@ header h1 {
   max-height: 500px;
   min-height: 185px;
   padding-bottom: 10px; 
-  /*position: relative;*/
 }
 
 
-.column-add-btn { /* Sütun ekleme butonu için özellikler */
+.column-add-btn { 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,12 +242,31 @@ header h1 {
   border: none;
   color: #ecf0f1;
   position: absolute;
-  left: 50%;  /* Sola %50 oranında yasla */
-  transform: translateX(-50%); /* Yatayda ortala */
+  left: 50%;  
+  transform: translateX(-50%); 
 }
 
 .column-add-btn:hover {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.kanban-board button { 
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #ecf0f1;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.kanban-board button:hover {
+  background-color: #ffffff23;
 }
 
 /* ====================== Kanban Kartı ====================== */
@@ -211,35 +280,63 @@ header h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 290px; 
   height: 150px; 
-  padding: 5px; /* İç boşluğu artırdık */
-  /*position: relative; /* "+" simgesini konumlandırmak için */
-}
-.kanban-card h3 { /* Proje adı için başlık */
-  margin-bottom: 1px; /* Başlık ile içerik arasında boşluk */
-  text-align: center;
-  margin-top: 10px;
-}
-.kanban-board .kanban-column .kanban-cards .kanban-card .personnel-cards { 
-  margin-top: 80px;
-  border-top: 1px solid #7f8c8d;
-  padding-top: 1px;
-  display: flex;             
-  flex-direction: row;        /* Yatay hizalama için row */
-  flex-wrap: wrap;            /* Kartlar taştığında alt satıra geçsin */
-  gap: 1px;
-  align-items: flex-start;
+  padding: 5px; 
+  display: flex;
+  flex-direction: column;
 }
 
-.kanban-card .personnel-cards h4 { /* Personel ekleme başlığı */
-  margin-bottom: 1px; /* Başlık ile içerik arasında boşluk */
+.kanban-card h3 { 
+  margin-bottom: 1px; 
+  text-align: left; 
+  margin-top: 5px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%;
+  position: relative; 
 }
-/* Butonu kartların içinde konumlandırma */
+
+.kanban-card h3 button { 
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-left: 5px; 
+}
+
+.kanban-card h3 button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.kanban-card h3 button i {
+  font-size: 1.2em;
+}
+
+.kanban-card h3 + hr { 
+  margin-top: 5px;    
+  margin-bottom: 5px;  
+  border: none;         
+  height: 1px;         
+  background-color: #7f8c8d; 
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
+  width: 100%; 
+}
+
+.kanban-card .personnel-cards h4 { 
+  margin-bottom: 1px; 
+}
+
 .kanban-cards .add-project-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 10px; /* Butonu sütunun altına konumlandır */
+  bottom: 10px; 
   left: 50%;
 
 }
@@ -249,100 +346,36 @@ header h1 {
 }
 
 .kanban-card .personnel-card { 
-  width: 10%; /* Genişliği %20 olarak ayarladık */
+  width: 10%; 
   margin-bottom: 1px;
   margin: 1px;
   height: 25px;
   flex-shrink: 0;
-  border-radius: 50%; /* Yuvarlak hale getir */
-  width: 22.5px;  /* %10 küçült */
-  height: 22.5px; /* %10 küçült */
+  border-radius: 50%; 
+  width: 22.5px;  
+  height: 22.5px; 
 }
 
-.kanban-card .personnel-card .delete-btn { /* Silme butonu için yeni sınıf */
+.kanban-card .personnel-card .delete-btn { 
   display: none;
-  font-size: 10px; /* Boyutunu küçülttük */
-  margin-right: 0; /* Sağa yaslamak için */
+  font-size: 10px; 
+  margin-right: 0; 
   color: #ffffff;
 }
 
 .kanban-card .personnel-card:hover .delete-btn { 
-  display: inline-block; /* Üzerine gelindiğinde göster */
+  display: inline-block; 
 }
 
 .personnel-card button {
-  padding: 1px 1px; /* Buton padding'ini azalttık */
-  font-size: 0.7rem; /* Buton yazı boyutunu azalttık */
-  margin-left: 1px; /* Butonlar arası boşluğu azalttık */
-}
-/* ====================== Personel Kartları ====================== */
-.personnel-board {
-  margin-top: 10px;
+  padding: 1px 1px; 
+  font-size: 0.7rem;
+  margin-left: 1px; 
 }
 
-.personnel-board h2 {
-  text-align: left;
-  color: #9b59b6;
-}
-
-.personnel-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.personnel-card {
-  background-color: #f39c12;
-  border-radius: 5px;
-  padding: 5px;
-  color: #2c3e50;
-  cursor: move;
-  text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1px;
-  display: flex;
-  align-items: center;
-}
-
-.kanban-card .personnel-card { 
-  width: 5%;
-  margin-bottom: 1px;
-}
-
-.personnel-card span {
-  flex-grow: 1;
-  text-align: center;   /* Personel isimlerini ortala */
-  font-size: 1.2em;     /* Büyüt */
-  font-weight: bold;  /* Kalınlaştır */
-}
-
-.personnel-card button {
-  padding: 3px 6px; 
-  font-size: 0.8rem;
-  margin-left: 10px;
-}
-
-.personnel-card button:first-child {
-  background-color: transparent;
-  color: white;
-}
-.personnel-card button:first-child:hover {
-  background-color: #00a0fd;
-}
-
-.personnel-card button:last-child {
-  background-color: transparent;
-  color: white;
-}
-.personnel-card button:last-child:hover {
-  background-color: #ff0505;
-}
-
-
-/* ====================== Kontrol Butonları ====================== */
 .controls {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 button {
@@ -361,140 +394,6 @@ button:hover {
   background-color: #ffffff23;
 }
 
-
-/* ====================== Modal Stil ====================== */
-.modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: #34495e;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-}
-
-.modal-content h2 {
-  margin-top: 0;
-  color: #ecf0f1;
-}
-
-.modal-content input,
-.modal-content select {
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #2c3e50;
-  border: 1px solid #0aecfc;
-  color: #ecf0f1;
-  border-radius: 5px;
-}
-
-.modal-content button {
-  width: 45%;
-  background-color: #27ae60;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: #ecf0f1;
-  cursor: pointer;
-  margin: 5px 1%;
-}
-
-.modal-content button:last-child {
-  background-color: #e74c3c;
-  width: 45%;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: #ecf0f1;
-  cursor: pointer;
-  margin: 5px 1%;
-}
-
-.personnel-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.modal-content input[type="color"] {
-  -webkit-appearance: none; 
-  -moz-appearance: none;
-  appearance: none;
-  width: 195px; 
-  height: 35px; 
-  border: none;
-  border-radius: 5px;
-  background-color: transparent;
-  padding: 0; 
-  cursor: pointer;
-}
-
-.modal-content input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 10; 
-}
-
-.modal-content input[type="color"]::-webkit-color-swatch {
-  border: none;
-  border-radius: 5px;
-}
-
-.modal-content input[type="color"]::-moz-color-swatch {
-  border: none;
-  border-radius: 5px;
-}
-
-.kanban-card .personnel-card { 
-  width: 10%; /* Genişliği %20 olarak ayarladık */
-  margin-bottom: 1px;
-  margin: 1px;
-  height: 25px;
-  flex-shrink: 0;
-  border-radius: 50%; /* Yuvarlak hale getir */
-  width: 22.5px;  /* %10 küçült */
-  height: 22.5px; /* %10 küçült */
-}
-
-
-/* Proje başlığı altında ayıraç */
-.kanban-card h3 + hr { /* Proje başlığından sonra gelen hr */
-  margin-top: 5px;    /* Üst kenar boşluğu */
-  margin-bottom: 5px;  /* Alt kenar boşluğu */
-  border: none;         /* Sınır ekleme */
-  height: 1px;         /* Ayıraç yüksekliği */
-  background-color: #7f8c8d; /* Ayıraç rengi */
-}
-.kanban-card h3 { /* Proje adı için başlık */
-  margin-bottom: 1px; /* Başlık ile içerik arasında boşluk */
-  text-align: center;
-  margin-top: 10px;
-}
-
-.kanban-card h3 {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.kanban-card h3 + hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: none;
-  height: 1px;
-  background-color: #7f8c8d; 
-}
-
-.kanban-card .personnel-card span {
-  flex-grow: 1;
-  text-align: center;   /* Personel isimlerini ortala */
-  font-size: 1.2em;     /* Büyüt */
-  font-weight: bold;  /* Kalınlaştır */
+.hide {
+  display: none;
 }

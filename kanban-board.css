@@ -1,0 +1,121 @@
+/* ====================== Kanban Board ====================== */
+.kanban-board {
+    width: 1250px;
+    display: flex;
+    /*justify-content: flex-start;*/
+    gap: 5px;
+    margin-left: 50;
+    position: relative; /* Butonu konumlandırmak için */
+  }
+  
+  .container .left-sidebar.collapsed ~ main .kanban-board {
+    margin-left: 0; 
+  }
+  
+  .kanban-column {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 5px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 900px;
+    position: relative;
+  }
+  
+  .kanban-column .column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .kanban-column h2 {
+    text-align: left; 
+    margin: 0;
+    padding: 1px 50px;
+    border-radius: 10px 10px 0 0;
+    background-color: #2980b9; 
+    color: #eb7d00;
+    font-size: 1.2rem;
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağla */
+    overflow: hidden;     /* Taşan metni gizle */
+    text-overflow: ellipsis; /* Taşan metne "..." ekle */
+  
+  }
+  
+  .kanban-column .column-controls {
+    display: flex;
+  }
+  
+  .kanban-column .edit-column-btn,
+  .kanban-column .delete-column-btn {
+    margin-right: 1px;
+    padding: 1px 1px; 
+    font-size: 0.75rem;
+    background-color: transparent;
+    border: none;
+    color: #ecf0f1;
+    cursor: pointer;
+  }
+  
+  .kanban-column .edit-column-btn:hover {
+    background-color: #00a0fd;
+  }
+  .kanban-column .delete-column-btn {
+    cursor: pointer;
+  }
+  .kanban-column .delete-column-btn:hover {
+    background-color: #ff0505;
+  }
+  
+  .addProjectBtnAfterColumn:hover {
+    background-color: #1aff05;
+  }
+  
+  .kanban-cards {
+    max-height: 500px;
+    min-height: 185px;
+    padding-bottom: 10px; 
+    /*position: relative;*/
+  }
+  
+  
+  .column-add-btn { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px; 
+    height: 25px; 
+    line-height: 25px; 
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #ecf0f1;
+    position: absolute;
+    left: 50%;  
+    transform: translateX(-50%); 
+  }
+  
+  .column-add-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .kanban-board button { 
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #ecf0f1;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .kanban-board button:hover {
+    background-color: #ffffff23;
+  }
